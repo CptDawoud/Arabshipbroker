@@ -6,170 +6,184 @@
   <title>الناقل البحري | Arab Ship Broker</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f9fc;
-      color: #002b45;
-      direction: rtl;
-      line-height: 1.8;
-      transition: direction 0.3s ease, text-align 0.3s ease;
+      font-family: sans-serif;
+      line-height: 1.6;
+      padding: 1rem;
+      background-color: #f9f9f9;
     }
-    header {
-      background-color: #004e7c;
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-      box-shadow: 0 4px 10px rgb(0 0 0 / 0.2);
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-    section {
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: 2rem auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgb(0 0 0 / 0.07);
-    }
-    h2 {
-      color: #004e7c;
-      font-size: 1.9rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      border-bottom: 3px solid #0077b6;
-      padding-bottom: 0.5rem;
-      letter-spacing: 1px;
-    }
+
     .cta-button {
-      display: inline-block;
-      background-color: #0077b6;
-      color: white;
-      padding: 0.8rem 1.6rem;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 1rem;
-      cursor: pointer;
-      font-size: 1.1rem;
-      font-weight: 600;
-      box-shadow: 0 5px 10px rgb(0 119 182 / 0.5);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
-    }
-    .cta-button:hover {
-      background-color: #005f86;
-      box-shadow: 0 8px 15px rgb(0 95 134 / 0.7);
-      transform: translateY(-2px);
-    }
-    #stats {
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .counter {
-      font-size: 2rem;
-      color: #0077b6;
-      font-weight: bold;
-    }
-    .lang-toggle {
-      position: fixed;
-      top: 1rem;
-      left: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #0077b6;
+      background-color: #004080;
       color: white;
       border: none;
-      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
       cursor: pointer;
-      z-index: 1000;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #00264d;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-info {
+      background-color: #e6f0ff;
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .contact-info h3 {
+      color: #004080;
+      margin-top: 0;
+      border-bottom: 2px solid #004080;
+      padding-bottom: 0.5rem;
+    }
+
+    .contact-info ul {
+      padding-left: 1.5rem;
+    }
+
+    .contact-info li {
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-form {
+      background-color: #f0f8ff;
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .contact-form .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    textarea, input, select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
     }
   </style>
 </head>
 <body>
-  <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
-  <header>
-    <h1 id="title">الناقل البحري</h1>
-    <p id="subtitle">وسيطك الموثوق في سوق النقل البحري</p>
-  </header>
 
-  <section id="stats">
-    <div>
-      <div class="counter" id="shipsCount">0</div>
-      <div id="shipsLabel">السفن المتاحة</div>
-    </div>
-    <div>
-      <div class="counter" id="cargoCount">0</div>
-      <div id="cargoLabel">الشحنات المطلوبة</div>
+  <div style="text-align: center; margin-bottom: 1rem;">
+    <button id="langToggleBtn" class="cta-button">English</button>
+  </div>
+
+  <section aria-label="Contact Us">
+    <h2 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3 data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h3>
+        <ul>
+          <li data-ar="📧 بريد إلكتروني: ops@arabshipbroker.com (للوساطة في البضائع الصب الجافة)"
+              data-en="📧 Email: ops@arabshipbroker.com (Dry Bulk Brokerage)">
+            📧 بريد إلكتروني: <a href="mailto:ops@arabshipbroker.com">ops@arabshipbroker.com</a> (للوساطة في البضائع الصب الجافة)
+          </li>
+          <li data-ar="📧 بريد إلكتروني: sns@arabshipbroker.com (لوساطة البيع والشراء)"
+              data-en="📧 Email: sns@arabshipbroker.com (Sale & Purchase Brokerage)">
+            📧 بريد إلكتروني: <a href="mailto:sns@arabshipbroker.com">sns@arabshipbroker.com</a> (لوساطة البيع والشراء)
+          </li>
+          <li data-ar="📞 هاتف: +966 55 000 0000"
+              data-en="📞 Phone: +966 55 000 0000">
+            📞 هاتف: +966 55 000 0000
+          </li>
+          <li data-ar="🕒 ساعات العمل: الأحد - الخميس، 8 صباحًا - 5 مساءً (ت ع م+03)"
+              data-en="🕒 Working Hours: Sun - Thu, 8AM - 5PM (UTC+3)">
+            🕒 ساعات العمل: الأحد - الخميس، 8 صباحًا - 5 مساءً (ت ع م+03)
+          </li>
+          <li data-ar="📍 المقر الرئيسي: جدة، المملكة العربية السعودية"
+              data-en="📍 Headquarters: Jeddah, Saudi Arabia">
+            📍 المقر الرئيسي: جدة، المملكة العربية السعودية
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-form">
+        <h3 data-ar="أرسل لنا رسالة" data-en="Send Us a Message">أرسل لنا رسالة</h3>
+        <form id="contactForm">
+          <div class="grid-2">
+            <div>
+              <label for="contactName" data-ar="الاسم" data-en="Name">الاسم</label>
+              <input type="text" id="contactName" name="name" required placeholder="الاسم" data-ar="الاسم" data-en="Name">
+            </div>
+            <div>
+              <label for="contactEmail" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</label>
+              <input type="email" id="contactEmail" name="email" required placeholder="البريد الإلكتروني" data-ar="البريد الإلكتروني" data-en="Email">
+            </div>
+          </div>
+
+          <div>
+            <label for="contactSubject" data-ar="الموضوع" data-en="Subject">الموضوع</label>
+            <input type="text" id="contactSubject" name="subject" required placeholder="الموضوع" data-ar="الموضوع" data-en="Subject">
+          </div>
+
+          <div>
+            <label for="contactService" data-ar="نوع الخدمة" data-en="Service Type">نوع الخدمة</label>
+            <select id="contactService" name="service" required>
+              <option value="" disabled selected data-ar="اختر" data-en="Select">اختر</option>
+              <option value="dry_bulk" data-ar="وساطة البضائع الصب الجافة" data-en="Dry Bulk Brokerage">وساطة البضائع الصب الجافة</option>
+              <option value="sale_purchase" data-ar="وساطة البيع والشراء" data-en="Sale & Purchase Brokerage">وساطة البيع والشراء</option>
+              <option value="general" data-ar="استفسار عام" data-en="General Inquiry">استفسار عام</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="contactMessage" data-ar="الرسالة" data-en="Message">الرسالة</label>
+            <textarea id="contactMessage" name="message" required placeholder="الرسالة" data-ar="الرسالة" data-en="Message"></textarea>
+          </div>
+
+          <button type="submit" class="cta-button" data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</button>
+        </form>
+      </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2 id="contactTitle">تواصل معنا</h2>
-    <p id="contactDesc">يسعدنا التواصل معك لتقديم خدمات الوساطة أو مناقشة فرص التعاون.</p>
-    <p>📧 <span id="emailLabel">البريد الإلكتروني:</span> <a href="mailto:ops@arabshipbroker.com">ops@arabshipbroker.com</a></p>
-    <p class="ltr">📞 <span id="phoneLabel">الهاتف:</span> 00201010329231</p>
-    <p>🌍 <span id="websiteLabel">موقعنا:</span> <a href="https://www.arabshipbroker.com" target="_blank">www.arabshipbroker.com</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 <span id="footerBrand">الناقل البحري</span> - <span id="rights">جميع الحقوق محفوظة</span></p>
-  </footer>
+  <footer></footer>
 
   <script>
-    // Counter Animation
-    function animateCounter(id, target) {
-      let count = 0;
-      const el = document.getElementById(id);
-      const interval = setInterval(() => {
-        count++;
-        el.textContent = count;
-        if (count >= target) clearInterval(interval);
-      }, 50);
-    }
-    animateCounter('shipsCount', 35);
-    animateCounter('cargoCount', 24);
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert(document.documentElement.lang === 'ar' ?
+        'تم استلام رسالتك بنجاح! سنتواصل معك قريبًا.' :
+        'Your message has been received! We will contact you soon.');
+      this.reset();
+    });
 
-    // Language Toggle
-    let isArabic = true;
-    function toggleLanguage() {
-      isArabic = !isArabic;
-      document.body.dir = isArabic ? 'rtl' : 'ltr';
-      document.body.style.textAlign = isArabic ? 'right' : 'left';
-      document.querySelector('.lang-toggle').textContent = isArabic ? 'EN' : 'عربي';
-      const text = {
-        ar: {
-          title: "الناقل البحري",
-          subtitle: "وسيطك الموثوق في سوق النقل البحري",
-          shipsLabel: "السفن المتاحة",
-          cargoLabel: "الشحنات المطلوبة",
-          contactTitle: "تواصل معنا",
-          contactDesc: "يسعدنا التواصل معك لتقديم خدمات الوساطة أو مناقشة فرص التعاون.",
-          emailLabel: "البريد الإلكتروني:",
-          phoneLabel: "الهاتف:",
-          websiteLabel: "موقعنا:",
-          footerBrand: "الناقل البحري",
-          rights: "جميع الحقوق محفوظة"
-        },
-        en: {
-          title: "Arab Ship Broker",
-          subtitle: "Your trusted partner in marine shipping",
-          shipsLabel: "Available Ships",
-          cargoLabel: "Available Cargoes",
-          contactTitle: "Contact Us",
-          contactDesc: "We are happy to connect with you for brokerage services or to discuss cooperation.",
-          emailLabel: "Email:",
-          phoneLabel: "Phone:",
-          websiteLabel: "Website:",
-          footerBrand: "Arab Ship Broker",
-          rights: "All rights reserved"
-        }
-      };
-      const lang = isArabic ? text.ar : text.en;
-      for (const id in lang) {
-        const el = document.getElementById(id);
-        if (el) el.textContent = lang[id];
-      }
-    }
+    const toggleBtn = document.getElementById('langToggleBtn');
+    toggleBtn.addEventListener('click', () => {
+      const isArabic = document.documentElement.lang === 'ar';
+      document.documentElement.lang = isArabic ? 'en' : 'ar';
+      document.documentElement.dir = isArabic ? 'ltr' : 'rtl';
+      toggleBtn.textContent = isArabic ? 'العربية' : 'English';
+
+      document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+        el.textContent = isArabic ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+      });
+
+      document.querySelectorAll('input[placeholder][data-ar][data-en], textarea[placeholder][data-ar][data-en]').forEach(el => {
+        el.setAttribute('placeholder', isArabic ? el.getAttribute('data-en') : el.getAttribute('data-ar'));
+      });
+    });
   </script>
 </body>
 </html>
